@@ -27,13 +27,6 @@ class App(MDApp):
         a += 5
         self.root.shot_count.text = f'A: {aPressed} C: {cPressed} D: {dPressed} M: {mPressed} NS: {nsPressed}'
 
-    def a_onlongpress(self):
-        global aPressed
-        global a
-        aPressed -= 1
-        a -= 5
-        self.root.shot_count.text = f'A: {aPressed} C: {cPressed} D: {dPressed} M: {mPressed} NS: {nsPressed}'
-
     def c_onpress(self):
         global cPressed
         global c
