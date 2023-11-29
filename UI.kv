@@ -1,0 +1,113 @@
+MDScreen:
+
+    hf_field: hf_field
+    time_field: time_field
+    shot_count: shot_count
+
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name: 'page1'
+            text: "Calculator"
+            icon: 'calculator'
+            MDFloatLayout:
+                MDCard:
+                    size_hint: .95, .10
+                    pos_hint: {"center_x": 0.5, "center_y": 0.93}
+                    MDLabel:
+                        id: hf_field
+                        font_style: 'H3'
+                        font_size: sp(35)
+                        text: "Hit Factor"
+                        size_hint: 1, 1
+                        halign: 'center'
+                        valign: 'center'
+                MDCard:
+                    size_hint: .95, .10
+                    pos_hint: {"center_x": 0.5, "center_y": .82}
+                    MDLabel:
+                        id: shot_count
+                        font_style: 'H2'
+                        font_size: sp(30)
+                        text: 'Shot Counter'
+                        size_hint: 1, 1
+                        halign: 'center'
+                        valign: 'center'
+                MDTextField:
+                    id: time_field
+                    input_filter: 'float'
+                    font_size: sp(30)
+                    hint_text: "Enter Time"
+                    mode: "rectangle"
+                    size_hint: .95, .10
+                    pos_hint: {"center_x": 0.5, "center_y": 0.72}
+                MDCard:
+                    size_hint: .95, .55
+                    pos_hint: {"center_x": 0.5, "center_y": .38}
+                    MDGridLayout:
+                        rows: 2
+                        columns: 3
+                        size_hint: 1, 1
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                        padding: 30
+                        spacing: 20
+                        MDFlatButton:
+                            font_style: 'Button'
+                            font_size: sp(30)
+                            text: "A"
+                            size_hint: 0.4, 0.4
+                            md_bg_color: 51, 51, 51, .2
+                            on_press: app.a_onpress()
+                        MDFlatButton:
+                            font_style: 'Button'
+                            font_size: sp(30)
+                            text: "C"
+                            size_hint: 0.4, 0.4
+                            md_bg_color: 51, 51, 51, .2
+                            on_press: app.c_onpress()
+                        MDFlatButton:
+                            font_style: 'Button'
+                            font_size: sp(30)
+                            text: "D"
+                            size_hint: 0.4, 0.4
+                            md_bg_color: 51, 51, 51, .2
+                            on_press: app.d_onpress()
+                        MDFlatButton:
+                            font_style: 'Button'
+                            font_size: sp(30)
+                            text: "M"
+                            size_hint: 0.4, 0.4
+                            md_bg_color: 51, 51, 51, .2
+                            on_press: app.m_onpress()
+                        MDFlatButton:
+                            font_style: 'Button'
+                            font_size: sp(30)
+                            text: "NS"
+                            size_hint: 0.4, 0.4
+                            md_bg_color: 51, 51, 51, .2
+                            on_press: app.ns_onpress()
+                        MDFlatButton:
+                            font_style: 'Button'
+                            font_size: sp(30)
+                            text: "R"
+                            size_hint: .4, .4
+                            md_bg_color: 51, 51, 51, .2
+                            on_press: app.clear()
+                MDCard:
+                    size_hint: .95, .07
+                    pos_hint: {"center_x": 0.5, "center_y": .05}
+                    MDFlatButton:
+                        font_style: 'Button'
+                        font_size: sp(30)
+                        text: "="
+                        md_bg_color: 165, 165, 165, .3
+                        size_hint: 1, 1
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                        on_press: app.calculate()
+        MDBottomNavigationItem:
+            name: 'page2'
+            text: "Stats"
+            icon: 'trending-up'
+        MDBottomNavigationItem:
+            name: 'page3'
+            text: "Settings"
+            icon: 'application-settings'
