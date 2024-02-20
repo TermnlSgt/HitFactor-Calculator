@@ -15,6 +15,8 @@ d = 0
 m = 0
 ns = 0
 
+# shot_count = f' A: {aPressed} C: {cPressed}'
+
 
 class App(MDApp, TouchBehavior):
     def build(self):
@@ -29,64 +31,77 @@ class Alpha(MDFlatButton, TouchBehavior):
         global a
         aPressed += 1
         a += 5
+        print(aPressed, a)
 
     def on_long_touch(self, *args):
-        print("fuck you")
-
-    def on_double_tap(self, *args):
-        print("<on_double_tap> event")
-
-    def on_triple_tap(self, *args):
-        print("<on_triple_tap> event")
+        global aPressed
+        global a
+        aPressed = 0
+        a = 0
+        print(aPressed, a)
 
 
 class Charlie(MDFlatButton, TouchBehavior):
+
+    def on_press(self, *args):
+        global cPressed
+        global c
+        cPressed += 1
+        c += 5
+
     def on_long_touch(self, *args):
         print("<on_long_touch> event")
-
-    def on_double_tap(self, *args):
-        print("<on_double_tap> event")
-
-    def on_triple_tap(self, *args):
-        print("<on_triple_tap> event")
 
 
 class Delta(MDFlatButton, TouchBehavior):
+
+    def on_press(self, *args):
+        global dPressed
+        global d
+        dPressed += 1
+        d += 5
+
     def on_long_touch(self, *args):
         print("<on_long_touch> event")
-
-    def on_double_tap(self, *args):
-        print("<on_double_tap> event")
-
-    def on_triple_tap(self, *args):
-        print("<on_triple_tap> event")
 
 
 class Mike(MDFlatButton, TouchBehavior):
+
+    def on_press(self, *args):
+        global mPressed
+        global m
+        mPressed += 1
+        m += 5
+
     def on_long_touch(self, *args):
         print("<on_long_touch> event")
-
-    def on_double_tap(self, *args):
-        print("<on_double_tap> event")
-
-    def on_triple_tap(self, *args):
-        print("<on_triple_tap> event")
 
 
 class NoShoot(MDFlatButton, TouchBehavior):
+
+    def on_press(self, *args):
+        global nsPressed
+        global ns
+        nsPressed += 1
+        ns += 5
+
     def on_long_touch(self, *args):
         print("<on_long_touch> event")
-
-    def on_double_tap(self, *args):
-        print("<on_double_tap> event")
-
-    def on_triple_tap(self, *args):
-        print("<on_triple_tap> event")
 
 
 class Reset(MDFlatButton, TouchBehavior):
     def on_long_touch(self, *args):
-        print("<on_long_touch> event")
+        global a, aPressed, c, cPressed, d, dPressed, m, mPressed, ns, nsPressed
+        a = 0
+        aPressed = 0
+        c = 0
+        cPressed = 0
+        d = 0
+        dPressed = 0
+        m = 0
+        mPressed = 0
+        ns = 0
+        nsPressed = 0
 
 
 App().run()
