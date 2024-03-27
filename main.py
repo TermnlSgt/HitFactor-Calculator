@@ -48,9 +48,14 @@ class Charlie(MDFlatButton, TouchBehavior):
         global c
         cPressed += 1
         c += 5
+        print(cPressed, c)
 
     def on_long_touch(self, *args):
-        print("<on_long_touch> event")
+        global cPressed
+        global c
+        cPressed = 0
+        c = 0
+        print(cPressed, c)
 
 
 class Delta(MDFlatButton, TouchBehavior):
